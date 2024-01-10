@@ -9,6 +9,9 @@ import 'package:get_it/get_it.dart';
 final sl = GetIt.instance;
 
 Future<void> initializeDependencies() async {
+  final database =
+      await $FloorAppDatabase.databaseBuilder("app_database.db").build();
+
   // Dio
   sl.registerSingleton<Dio>(Dio());
 
